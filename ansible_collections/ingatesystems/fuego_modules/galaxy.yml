@@ -1,0 +1,20 @@
+namespace: ingatesystems
+name: fuego_modules
+version: 1.0.0
+readme: README.md
+authors:
+  - Erik Andersson <erik@ingate.com>
+description: Ingate Systems Modules for Ansible
+license:
+  - GPL-3.0-only
+tags:
+  - ingate
+  - networking
+  - sip
+  - siparator
+  - firewall
+dependencies: {}
+repository: https://github.com/ingatesystems/ingate-ansible
+documentation: https://www.ingate.com
+homepage: https://www.ingate.com
+issues: https://github.com/ingatesystems/ingate-ansible/issues
