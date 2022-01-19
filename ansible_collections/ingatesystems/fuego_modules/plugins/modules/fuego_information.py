@@ -14,7 +14,8 @@ short_description: Retrieve information from an Ingate SBC.
 description:
   - Retrieve information from an Ingate SBC.
 version_added: '1.0.0'
-extends_documentation_fragment: ingate
+extends_documentation_fragment:
+  - ingatesystems.fuego_modules.common_options
 options:
   unit:
     description:
