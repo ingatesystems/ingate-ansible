@@ -12,6 +12,8 @@ options:
   client:
     description:
       - A dict object containing connection details.
+    required: true
+    type: dict
     suboptions:
       version:
         description:

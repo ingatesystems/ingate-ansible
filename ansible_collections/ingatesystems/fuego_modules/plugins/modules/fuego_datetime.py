@@ -25,16 +25,20 @@ options:
   datetime:
     description:
       - A dict object containing time information. Use with C(set).
+    type: dict
     suboptions:
       date:
         description:
           - A date. E.g. 2018-07-19.
+        type: str
       time:
         description:
           - A time. E.g. 11:59:59.
+        type: str
       zone:
         description:
           - A timezone. E.g. Europe/Stockholm.
+        type: str
   get:
     description:
       - Get the current date, time and timezone.
@@ -77,7 +81,7 @@ set:
     msg:
       description: Date, time and timezone information
       returned: success
-      type: string
+      type: str
       sample: 2018-07-25 14:24:09 Europe/Stockholm
 get:
   description: Current date, time and timezone
@@ -87,7 +91,7 @@ get:
     msg:
       description: Date, time and timezone information
       returned: success
-      type: string
+      type: str
       sample: 2018-07-25 14:25:09 Europe/Stockholm
 timezone_list:
   description: List of available timezones
@@ -102,7 +106,7 @@ timezone_list:
         zone:
           description: The name of the zone
           returned: success
-          type: string
+          type: str
           sample: US/Michigan
 '''
 

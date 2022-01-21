@@ -144,17 +144,49 @@ unit:
 error:
   description: List of error(s) found in the the preliminary configuration
   returned: when C(error) is yes and success
-  type: complex
+  type: list
+  elements: dict
   contains:
     href:
       description: The REST API URL to the affected row
       returned: success
-      type: string
+      type: str
       sample: http://192.168.1.1/api/v1/misc/dns_servers/1
     error:
       description: Error information
       returned: success
       type: complex
+      contains:
+        column:
+          description: Column name
+          returned: success
+          type: str
+          sample: lower_ip_dns
+        err_id:
+          description: Error number
+          returned: success
+          type: int
+          sample: 4
+        msg:
+          description: Error message
+          returned: success
+          type: str
+          sample: No value given.
+        rowid:
+          description: Row number
+          returned: success
+          type: int
+          sample: 1
+        table:
+          description: Table name
+          returned: success
+          type: str
+          sample: firewall.network_groups
+        type:
+          description: Type of error
+          returned: success
+          type: str
+          sample: VALUE_MISSING
 table_describe:
   description: Description of tables and associated information
   returned: when C(table_describe) is yes and success
@@ -168,12 +200,12 @@ table_describe:
         name:
           description: The name of the table
           returned: success
-          type: string
+          type: str
           sample: misc.dns_servers
         href:
           description: The REST API URL to the table
           returned: success
-          type: string
+          type: str
           sample: http://192.168.1.1/api/v1/misc/dns_servers
         info:
           description: Column names and associated datatype
@@ -193,12 +225,12 @@ table_list:
         name:
           description: The name of the table
           returned: success
-          type: string
+          type: str
           sample: misc.dns_servers
         href:
           description: The REST API URL to the table
           returned: success
-          type: string
+          type: str
           sample: http://192.168.1.1/api/v1/misc/dns_servers
         sdk_methods:
           description: A list of allowed SDK methods

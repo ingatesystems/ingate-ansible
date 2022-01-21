@@ -51,6 +51,7 @@ options:
       - Expect no response when storing the preliminary configuration.
         Refer to the C(store) option.
     type: bool
+    default: false
   return_rowid:
     description:
       - Get rowid(s) from a table where the columns match.
@@ -69,13 +70,16 @@ options:
     description:
       - Where in the filesystem to store the downloaded configuration.
         Refer to the C(download) option.
+    type: str
   filename:
     description:
       - The name of the file to store the downloaded configuration in.
         Refer to the C(download) option.
+    type: str
   table:
     description:
       - The name of the table.
+    type: str
   rowid:
     description:
       - A row id.
@@ -83,6 +87,7 @@ options:
   columns:
     description:
       - A dict containing column names/values.
+    type: dict
 notes:
   - If C(store_download) is set to True, and C(path) and C(filename) is
     omitted, the file will be stored in the current directory with an
@@ -247,7 +252,8 @@ RETURN = '''
 add:
   description: A list containing information about the added row
   returned: when C(add) is yes and success
-  type: complex
+  type: list
+  elements: dict
   contains:
     href:
       description: The REST API URL to the added row
@@ -257,7 +263,7 @@ add:
     data:
       description: Column names/values
       returned: success
-      type: complex
+      type: dict
       sample: {'number': '2', 'server': '10.48.254.33'}
     id:
       description: The row id
@@ -267,7 +273,8 @@ add:
 delete:
   description: A list containing information about the deleted row(s)
   returned: when C(delete) is yes and success
-  type: complex
+  type: list
+  elements: dict
   contains:
     table:
       description: The name of the table
@@ -277,7 +284,7 @@ delete:
     data:
       description: Column names/values
       returned: success
-      type: complex
+      type: dict
       sample: {'number': '2', 'server': '10.48.254.33'}
     id:
       description: The row id
@@ -287,7 +294,8 @@ delete:
 get:
   description: A list containing information about the row(s)
   returned: when C(get) is yes and success
-  type: complex
+  type: list
+  elements: dict
   contains:
     table:
       description: The name of the table
@@ -302,7 +310,7 @@ get:
     data:
       description: Column names/values
       returned: success
-      type: complex
+      type: dict
       sample: {'number': '2', 'server': '10.48.254.33'}
     id:
       description: The row id
@@ -312,7 +320,8 @@ get:
 modify:
   description: A list containing information about the modified row
   returned: when C(modify) is yes and success
-  type: complex
+  type: list
+  elements: dict
   contains:
     table:
       description: The name of the table
@@ -327,7 +336,7 @@ modify:
     data:
       description: Column names/values
       returned: success
-      type: complex
+      type: dict
       sample: {'number': '2', 'server': '10.48.254.33'}
     id:
       description: The row id
@@ -337,7 +346,7 @@ modify:
 revert:
   description: A command status message
   returned: when C(revert) is yes and success
-  type: complex
+  type: dict
   contains:
     msg:
       description: The command status message
@@ -347,7 +356,7 @@ revert:
 factory:
   description: A command status message
   returned: when C(factory) is yes and success
-  type: complex
+  type: dict
   contains:
     msg:
       description: The command status message
@@ -357,7 +366,7 @@ factory:
 store:
   description: A command status message
   returned: when C(store) is yes and success
-  type: complex
+  type: dict
   contains:
     msg:
       description: The command status message
@@ -372,7 +381,7 @@ return_rowid:
 download:
   description: Configuration database and meta data
   returned: when C(download) is yes and success
-  type: complex
+  type: dict
   contains:
     config:
       description: The configuration database
