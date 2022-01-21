@@ -64,7 +64,7 @@ RETURN = '''
 unit:
   description: Information about the unit
   returned: when C(unit) is yes and success
-  type: complex
+  type: dict
   contains:
     installid:
       description: The installation identifier
@@ -155,7 +155,7 @@ error:
     error:
       description: Error information
       returned: success
-      type: complex
+      type: dict
       contains:
         column:
           description: Column name
@@ -191,11 +191,12 @@ table_describe:
   description: Description of tables and associated information
   returned: when C(table_describe) is yes and success
   type: list
+  elements: dict
   contains:
     table:
       description: Table information
       returned: success
-      type: complex
+      type: dict
       contains:
         name:
           description: The name of the table
@@ -210,17 +211,18 @@ table_describe:
         info:
           description: Column names and associated datatype
           returned: success
-          type: complex
+          type: dict
           sample: {'cert': 'OptPrivCert', 'name': 'Name'}
 table_list:
   description: List of tables and associated information
   returned: when C(table_list) is yes and success
   type: list
+  elements: dict
   contains:
     table:
       description: Table information
       returned: success
-      type: complex
+      type: dict
       contains:
         name:
           description: The name of the table
@@ -236,11 +238,13 @@ table_list:
           description: A list of allowed SDK methods
           returned: success
           type: list
+          elements: str
           sample: add_row
         methods:
           description: A list of allowed HTTP methods
           returned: success
           type: list
+          elements: str
           sample: GET
 '''
 

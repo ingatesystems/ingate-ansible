@@ -74,9 +74,9 @@ EXAMPLES = '''
 
 RETURN = '''
 set:
-  description: Current date, time and timezone
+  description: Set current date, time and timezone
   returned: when C(set) is yes and success
-  type: complex
+  type: dict
   contains:
     msg:
       description: Date, time and timezone information
@@ -84,9 +84,9 @@ set:
       type: str
       sample: 2018-07-25 14:24:09 Europe/Stockholm
 get:
-  description: Current date, time and timezone
+  description: Get current date, time and timezone
   returned: when C(get) is yes and success
-  type: complex
+  type: dict
   contains:
     msg:
       description: Date, time and timezone information
@@ -97,11 +97,12 @@ timezone_list:
   description: List of available timezones
   returned: when C(timezone_list) is yes and success
   type: list
+  elements: dict
   contains:
     data:
       description: Zone information
       returned: success
-      type: complex
+      type: dict
       contains:
         zone:
           description: The name of the zone

@@ -175,7 +175,8 @@ RETURN = '''
 license:
   description: A list of information about the installed license.
   returned: when C(license) is yes and success
-  type: complex
+  type: list
+  elements: dict
   contains:
     msg:
       description: Information regarding the installed license.
@@ -195,7 +196,7 @@ patch:
 upgrade:
   description: A command status message
   returned: when C(upgrade) is yes and success
-  type: complex
+  type: dict
   contains:
     msg:
       description: The command status message
@@ -205,7 +206,7 @@ upgrade:
 upgrade_accept:
   description: A command status message
   returned: when C(upgrade_accept) is yes and success
-  type: complex
+  type: dict
   contains:
     msg:
       description: The command status message
@@ -215,7 +216,7 @@ upgrade_accept:
 upgrade_abort:
   description: A command status message
   returned: when C(upgrade_abort) is yes and success
-  type: complex
+  type: dict
   contains:
     msg:
       description: The command status message
@@ -225,7 +226,7 @@ upgrade_abort:
 upgrade_downgrade:
   description: A command status message
   returned: when C(upgrade_downgrade) is yes and success
-  type: complex
+  type: dict
   contains:
     msg:
       description: The command status message
@@ -235,7 +236,7 @@ upgrade_downgrade:
 upgrade_download:
   description: A command status message
   returned: when C(upgrade_download) is yes and success
-  type: complex
+  type: dict
   contains:
     msg:
       description: The command status message
@@ -245,7 +246,7 @@ upgrade_download:
 reboot:
   description: A command status message
   returned: when C(reboot) is yes and success
-  type: complex
+  type: dict
   contains:
     msg:
       description: The command status message
@@ -255,7 +256,7 @@ reboot:
 opmode:
   description: A command status message
   returned: when C(opmode) is yes and success
-  type: complex
+  type: dict
   contains:
     msg:
       description: The command status message
