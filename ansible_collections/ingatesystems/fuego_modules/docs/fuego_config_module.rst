@@ -88,969 +88,421 @@ The below requirements are needed on the host that executes this module.
 Parameters
 ----------
 
-.. rst-class:: ansible-option-table
+.. raw:: html
+
+  <table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
+  <thead>
+  <tr class="row-odd">
+    <th class="head"><p>Parameter</p></th>
+    <th class="head"><p>Comments</p></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-add"></div>
+      <p class="ansible-option-title"><strong>add</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-add" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">boolean</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>Add a row to a table.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-choices-entry">no</span></p></li>
+        <li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-client"></div>
+      <p class="ansible-option-title"><strong>client</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-client" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">dictionary</span>
+        / <span class="ansible-option-required">required</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>A dict object containing connection details.</p>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-client/address"></div>
+      <p class="ansible-option-title"><strong>address</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-client/address" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+        / <span class="ansible-option-required">required</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The hostname or IP address to the unit.</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-client/password"></div>
+      <p class="ansible-option-title"><strong>password</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-client/password" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+        / <span class="ansible-option-required">required</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The password for the REST API user.</p>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-client/port"></div>
+      <p class="ansible-option-title"><strong>port</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-client/port" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">integer</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>Which HTTP(S) port to connect to.</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-client/scheme"></div>
+      <p class="ansible-option-title"><strong>scheme</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-client/scheme" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+        / <span class="ansible-option-required">required</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>Which HTTP protocol to use.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-choices-entry">http</span></p></li>
+        <li><p><span class="ansible-option-choices-entry">https</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-client/timeout"></div>
+      <p class="ansible-option-title"><strong>timeout</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-client/timeout" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">integer</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The timeout (in seconds) for REST API requests.</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-client/username"></div>
+      <p class="ansible-option-title"><strong>username</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-client/username" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+        / <span class="ansible-option-required">required</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The username of the REST API user.</p>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-client/validate_certs"></div>
+      <div class="ansibleOptionAnchor" id="parameter-client/verify_ssl"></div>
+      <p class="ansible-option-title"><strong>validate_certs</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-client/validate_certs" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line"><span class="ansible-option-aliases">aliases: verify_ssl</p>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">boolean</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>Verify the unit&#x27;s HTTPS certificate.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-choices-entry">no</span></p></li>
+        <li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-client/version"></div>
+      <p class="ansible-option-title"><strong>version</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-client/version" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>REST API version.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-default-bold">v1</span> <span class="ansible-option-default">← (default)</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-columns"></div>
+      <p class="ansible-option-title"><strong>columns</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-columns" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">dictionary</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>A dict containing column names/values.</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-delete"></div>
+      <p class="ansible-option-title"><strong>delete</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-delete" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">boolean</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>Delete all rows in a table or a specific row.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-choices-entry">no</span></p></li>
+        <li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-download"></div>
+      <p class="ansible-option-title"><strong>download</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-download" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">boolean</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>Download the configuration database from the unit.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-choices-entry">no</span></p></li>
+        <li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-factory"></div>
+      <p class="ansible-option-title"><strong>factory</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-factory" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">boolean</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>Reset the preliminary configuration to its factory defaults.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-choices-entry">no</span></p></li>
+        <li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-filename"></div>
+      <p class="ansible-option-title"><strong>filename</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-filename" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>The name of the file to store the downloaded configuration in. Refer to the <code class='docutils literal notranslate'>download</code> option.</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-get"></div>
+      <p class="ansible-option-title"><strong>get</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-get" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">boolean</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>Return all rows in a table or a specific row.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-choices-entry">no</span></p></li>
+        <li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-modify"></div>
+      <p class="ansible-option-title"><strong>modify</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-modify" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">boolean</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>Modify a row in a table.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-choices-entry">no</span></p></li>
+        <li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-no_response"></div>
+      <p class="ansible-option-title"><strong>no_response</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-no_response" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">boolean</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>Expect no response when storing the preliminary configuration. Refer to the <code class='docutils literal notranslate'>store</code> option.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-default-bold">no</span> <span class="ansible-option-default">← (default)</span></p></li>
+        <li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-path"></div>
+      <p class="ansible-option-title"><strong>path</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-path" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>Where in the filesystem to store the downloaded configuration. Refer to the <code class='docutils literal notranslate'>download</code> option.</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-return_rowid"></div>
+      <p class="ansible-option-title"><strong>return_rowid</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-return_rowid" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">boolean</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>Get rowid(s) from a table where the columns match.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-choices-entry">no</span></p></li>
+        <li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-revert"></div>
+      <p class="ansible-option-title"><strong>revert</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-revert" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">boolean</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>Reset the preliminary configuration.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-choices-entry">no</span></p></li>
+        <li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-rowid"></div>
+      <p class="ansible-option-title"><strong>rowid</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-rowid" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">integer</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>A row id.</p>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-store"></div>
+      <p class="ansible-option-title"><strong>store</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-store" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">boolean</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>Store the preliminary configuration.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-choices-entry">no</span></p></li>
+        <li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-store_download"></div>
+      <p class="ansible-option-title"><strong>store_download</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-store_download" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">boolean</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>If the downloaded configuration should be stored on disk. Refer to the <code class='docutils literal notranslate'>download</code> option.</p>
+      <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+      <ul class="simple">
+        <li><p><span class="ansible-option-default-bold">no</span> <span class="ansible-option-default">← (default)</span></p></li>
+        <li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="parameter-table"></div>
+      <p class="ansible-option-title"><strong>table</strong></p>
+      <a class="ansibleOptionLink" href="#parameter-table" title="Permalink to this option"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>The name of the table.</p>
+    </div></td>
+  </tr>
+  </tbody>
+  </table>
 
-.. list-table::
-  :width: 100%
-  :widths: auto
-  :header-rows: 1
-
-  * - Parameter
-    - Comments
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-add"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-add:
-
-      .. rst-class:: ansible-option-title
-
-      **add**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-add" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Add a row to a table.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-client"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-client:
-
-      .. rst-class:: ansible-option-title
-
-      **client**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-client" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`dictionary` / :ansible-option-required:`required`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      A dict object containing connection details.
-
-
-      .. raw:: html
-
-        </div>
-    
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-client/address"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-client/address:
-
-      .. rst-class:: ansible-option-title
-
-      **address**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-client/address" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string` / :ansible-option-required:`required`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The hostname or IP address to the unit.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-client/password"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-client/password:
-
-      .. rst-class:: ansible-option-title
-
-      **password**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-client/password" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string` / :ansible-option-required:`required`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The password for the REST API user.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-client/port"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-client/port:
-
-      .. rst-class:: ansible-option-title
-
-      **port**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-client/port" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`integer`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Which HTTP(S) port to connect to.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-client/scheme"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-client/scheme:
-
-      .. rst-class:: ansible-option-title
-
-      **scheme**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-client/scheme" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string` / :ansible-option-required:`required`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Which HTTP protocol to use.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`http`
-      - :ansible-option-choices-entry:`https`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-client/timeout"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-client/timeout:
-
-      .. rst-class:: ansible-option-title
-
-      **timeout**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-client/timeout" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`integer`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The timeout (in seconds) for REST API requests.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-client/username"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-client/username:
-
-      .. rst-class:: ansible-option-title
-
-      **username**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-client/username" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string` / :ansible-option-required:`required`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The username of the REST API user.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-client/validate_certs"></div>
-        <div class="ansibleOptionAnchor" id="parameter-client/verify_ssl"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-client/validate_certs:
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-client/verify_ssl:
-
-      .. rst-class:: ansible-option-title
-
-      **validate_certs**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-client/validate_certs" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-aliases:`aliases: verify_ssl`
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Verify the unit's HTTPS certificate.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-client/version"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-client/version:
-
-      .. rst-class:: ansible-option-title
-
-      **version**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-client/version" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      REST API version.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-default-bold:`v1` :ansible-option-default:`← (default)`
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-columns"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-columns:
-
-      .. rst-class:: ansible-option-title
-
-      **columns**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-columns" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      A dict containing column names/values.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-delete"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-delete:
-
-      .. rst-class:: ansible-option-title
-
-      **delete**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-delete" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Delete all rows in a table or a specific row.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-download"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-download:
-
-      .. rst-class:: ansible-option-title
-
-      **download**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-download" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Download the configuration database from the unit.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-factory"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-factory:
-
-      .. rst-class:: ansible-option-title
-
-      **factory**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-factory" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Reset the preliminary configuration to its factory defaults.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-filename"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-filename:
-
-      .. rst-class:: ansible-option-title
-
-      **filename**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-filename" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      The name of the file to store the downloaded configuration in. Refer to the \ :literal:`download`\  option.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-get"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-get:
-
-      .. rst-class:: ansible-option-title
-
-      **get**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-get" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Return all rows in a table or a specific row.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-modify"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-modify:
-
-      .. rst-class:: ansible-option-title
-
-      **modify**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-modify" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Modify a row in a table.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-no_response"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-no_response:
-
-      .. rst-class:: ansible-option-title
-
-      **no_response**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-no_response" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Expect no response when storing the preliminary configuration. Refer to the \ :literal:`store`\  option.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-path"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-path:
-
-      .. rst-class:: ansible-option-title
-
-      **path**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-path" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Where in the filesystem to store the downloaded configuration. Refer to the \ :literal:`download`\  option.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-return_rowid"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-return_rowid:
-
-      .. rst-class:: ansible-option-title
-
-      **return_rowid**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-return_rowid" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Get rowid(s) from a table where the columns match.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-revert"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-revert:
-
-      .. rst-class:: ansible-option-title
-
-      **revert**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-revert" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Reset the preliminary configuration.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-rowid"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-rowid:
-
-      .. rst-class:: ansible-option-title
-
-      **rowid**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-rowid" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`integer`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      A row id.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-store"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-store:
-
-      .. rst-class:: ansible-option-title
-
-      **store**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-store" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Store the preliminary configuration.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-store_download"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-store_download:
-
-      .. rst-class:: ansible-option-title
-
-      **store_download**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-store_download" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      If the downloaded configuration should be stored on disk. Refer to the \ :literal:`download`\  option.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-table"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__parameter-table:
-
-      .. rst-class:: ansible-option-title
-
-      **table**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-table" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      The name of the table.
-
-
-      .. raw:: html
-
-        </div>
 
 
 .. Attributes
@@ -1238,1282 +690,457 @@ Return Values
 -------------
 Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
 
-.. rst-class:: ansible-option-table
-
-.. list-table::
-  :width: 100%
-  :widths: auto
-  :header-rows: 1
-
-  * - Key
-    - Description
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-add"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-add:
-
-      .. rst-class:: ansible-option-title
-
-      **add**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-add" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      A list containing information about the added row
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` when \ :literal:`add`\  is yes and success
-
-
-      .. raw:: html
-
-        </div>
-
-    
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-add/data"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-add/data:
-
-      .. rst-class:: ansible-option-title
-
-      **data**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-add/data" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Column names/values
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` {"number": "2", "server": "10.48.254.33"}
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-add/href"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-add/href:
-
-      .. rst-class:: ansible-option-title
-
-      **href**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-add/href" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The REST API URL to the added row
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` "http://192.168.1.1/api/v1/misc/dns\_servers/2"
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-add/id"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-add/id:
-
-      .. rst-class:: ansible-option-title
-
-      **id**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-add/id" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`integer`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The row id
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` 22
-
-
-      .. raw:: html
-
-        </div>
-
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-delete"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-delete:
-
-      .. rst-class:: ansible-option-title
-
-      **delete**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-delete" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      A list containing information about the deleted row(s)
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` when \ :literal:`delete`\  is yes and success
-
-
-      .. raw:: html
-
-        </div>
-
-    
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-delete/data"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-delete/data:
-
-      .. rst-class:: ansible-option-title
-
-      **data**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-delete/data" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Column names/values
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` {"number": "2", "server": "10.48.254.33"}
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-delete/id"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-delete/id:
-
-      .. rst-class:: ansible-option-title
-
-      **id**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-delete/id" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`integer`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The row id
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` 22
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-delete/table"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-delete/table:
-
-      .. rst-class:: ansible-option-title
-
-      **table**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-delete/table" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The name of the table
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` "misc.dns\_servers"
-
-
-      .. raw:: html
-
-        </div>
-
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-download"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-download:
-
-      .. rst-class:: ansible-option-title
-
-      **download**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-download" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Configuration database and meta data
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` when \ :literal:`download`\  is yes and success
-
-
-      .. raw:: html
-
-        </div>
-
-    
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-download/config"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-download/config:
-
-      .. rst-class:: ansible-option-title
-
-      **config**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-download/config" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The configuration database
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-download/filename"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-download/filename:
-
-      .. rst-class:: ansible-option-title
-
-      **filename**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-download/filename" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      A suggested name for the configuration
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` "testname\_2018-10-01T214040.cfg"
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-download/mimetype"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-download/mimetype:
-
-      .. rst-class:: ansible-option-title
-
-      **mimetype**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-download/mimetype" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The mimetype
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` "application/x-config-database"
-
-
-      .. raw:: html
-
-        </div>
-
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-factory"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-factory:
-
-      .. rst-class:: ansible-option-title
-
-      **factory**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-factory" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      A command status message
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` when \ :literal:`factory`\  is yes and success
-
-
-      .. raw:: html
-
-        </div>
-
-    
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-factory/msg"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-factory/msg:
-
-      .. rst-class:: ansible-option-title
-
-      **msg**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-factory/msg" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The command status message
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` "reverted the configuration to the factory configuration."
-
-
-      .. raw:: html
-
-        </div>
-
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-get"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-get:
-
-      .. rst-class:: ansible-option-title
-
-      **get**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-get" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      A list containing information about the row(s)
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` when \ :literal:`get`\  is yes and success
-
-
-      .. raw:: html
-
-        </div>
-
-    
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-get/data"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-get/data:
-
-      .. rst-class:: ansible-option-title
-
-      **data**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-get/data" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Column names/values
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` {"number": "2", "server": "10.48.254.33"}
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-get/href"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-get/href:
-
-      .. rst-class:: ansible-option-title
-
-      **href**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-get/href" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The REST API URL to the row
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` "http://192.168.1.1/api/v1/misc/dns\_servers/1"
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-get/id"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-get/id:
-
-      .. rst-class:: ansible-option-title
-
-      **id**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-get/id" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`integer`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The row id
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` 1
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-get/table"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-get/table:
-
-      .. rst-class:: ansible-option-title
-
-      **table**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-get/table" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The name of the table
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` "Testname"
-
-
-      .. raw:: html
-
-        </div>
-
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-modify"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-modify:
-
-      .. rst-class:: ansible-option-title
-
-      **modify**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-modify" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      A list containing information about the modified row
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` when \ :literal:`modify`\  is yes and success
-
-
-      .. raw:: html
-
-        </div>
-
-    
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-modify/data"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-modify/data:
-
-      .. rst-class:: ansible-option-title
-
-      **data**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-modify/data" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Column names/values
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` {"number": "2", "server": "10.48.254.33"}
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-modify/href"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-modify/href:
-
-      .. rst-class:: ansible-option-title
-
-      **href**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-modify/href" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The REST API URL to the modified row
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` "http://192.168.1.1/api/v1/misc/dns\_servers/1"
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-modify/id"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-modify/id:
-
-      .. rst-class:: ansible-option-title
-
-      **id**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-modify/id" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`integer`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The row id
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` 10
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-modify/table"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-modify/table:
-
-      .. rst-class:: ansible-option-title
-
-      **table**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-modify/table" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The name of the table
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` "Testname"
-
-
-      .. raw:: html
-
-        </div>
-
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-return_rowid"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-return_rowid:
-
-      .. rst-class:: ansible-option-title
-
-      **return_rowid**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-return_rowid" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      The matched row id(s).
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` when \ :literal:`return\_rowid`\  is yes and success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` [1, 3]
-
-
-      .. raw:: html
-
-        </div>
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-revert"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-revert:
-
-      .. rst-class:: ansible-option-title
-
-      **revert**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-revert" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      A command status message
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` when \ :literal:`revert`\  is yes and success
-
-
-      .. raw:: html
-
-        </div>
-
-    
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-revert/msg"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-revert/msg:
-
-      .. rst-class:: ansible-option-title
-
-      **msg**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-revert/msg" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The command status message
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` "reverted the configuration to the last applied configuration."
-
-
-      .. raw:: html
-
-        </div>
-
-
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-store"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-store:
-
-      .. rst-class:: ansible-option-title
-
-      **store**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-store" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      A command status message
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` when \ :literal:`store`\  is yes and success
-
-
-      .. raw:: html
-
-        </div>
-
-    
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="return-store/msg"></div>
-
-      .. _ansible_collections.ingatesystems.fuego_modules.fuego_config_module__return-store/msg:
-
-      .. rst-class:: ansible-option-title
-
-      **msg**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#return-store/msg" title="Permalink to this return value"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      The command status message
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-returned-bold:`Returned:` success
-
-      .. rst-class:: ansible-option-line
-      .. rst-class:: ansible-option-sample
-
-      :ansible-option-sample-bold:`Sample:` "Successfully applied and saved the configuration."
-
-
-      .. raw:: html
-
-        </div>
-
+.. raw:: html
+
+  <table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
+  <thead>
+  <tr class="row-odd">
+    <th class="head"><p>Key</p></th>
+    <th class="head"><p>Description</p></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-add"></div>
+      <p class="ansible-option-title"><strong>add</strong></p>
+      <a class="ansibleOptionLink" href="#return-add" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">list</span>
+        / <span class="ansible-option-elements">elements=dictionary</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>A list containing information about the added row</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class='docutils literal notranslate'>add</code> is yes and success</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-add/data"></div>
+      <p class="ansible-option-title"><strong>data</strong></p>
+      <a class="ansibleOptionLink" href="#return-add/data" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">dictionary</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>Column names/values</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {"number": "2", "server": "10.48.254.33"}</p>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-add/href"></div>
+      <p class="ansible-option-title"><strong>href</strong></p>
+      <a class="ansibleOptionLink" href="#return-add/href" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The REST API URL to the added row</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> "http://192.168.1.1/api/v1/misc/dns_servers/2"</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-add/id"></div>
+      <p class="ansible-option-title"><strong>id</strong></p>
+      <a class="ansibleOptionLink" href="#return-add/id" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">integer</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The row id</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 22</p>
+    </div></td>
+  </tr>
+
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-delete"></div>
+      <p class="ansible-option-title"><strong>delete</strong></p>
+      <a class="ansibleOptionLink" href="#return-delete" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">list</span>
+        / <span class="ansible-option-elements">elements=dictionary</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>A list containing information about the deleted row(s)</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class='docutils literal notranslate'>delete</code> is yes and success</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-delete/data"></div>
+      <p class="ansible-option-title"><strong>data</strong></p>
+      <a class="ansibleOptionLink" href="#return-delete/data" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">dictionary</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>Column names/values</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {"number": "2", "server": "10.48.254.33"}</p>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-delete/id"></div>
+      <p class="ansible-option-title"><strong>id</strong></p>
+      <a class="ansibleOptionLink" href="#return-delete/id" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">integer</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The row id</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 22</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-delete/table"></div>
+      <p class="ansible-option-title"><strong>table</strong></p>
+      <a class="ansibleOptionLink" href="#return-delete/table" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The name of the table</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> "misc.dns_servers"</p>
+    </div></td>
+  </tr>
+
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-download"></div>
+      <p class="ansible-option-title"><strong>download</strong></p>
+      <a class="ansibleOptionLink" href="#return-download" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">dictionary</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>Configuration database and meta data</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class='docutils literal notranslate'>download</code> is yes and success</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-download/config"></div>
+      <p class="ansible-option-title"><strong>config</strong></p>
+      <a class="ansibleOptionLink" href="#return-download/config" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The configuration database</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-download/filename"></div>
+      <p class="ansible-option-title"><strong>filename</strong></p>
+      <a class="ansibleOptionLink" href="#return-download/filename" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>A suggested name for the configuration</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> "testname_2018-10-01T214040.cfg"</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-download/mimetype"></div>
+      <p class="ansible-option-title"><strong>mimetype</strong></p>
+      <a class="ansibleOptionLink" href="#return-download/mimetype" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The mimetype</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> "application/x-config-database"</p>
+    </div></td>
+  </tr>
+
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-factory"></div>
+      <p class="ansible-option-title"><strong>factory</strong></p>
+      <a class="ansibleOptionLink" href="#return-factory" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">dictionary</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>A command status message</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class='docutils literal notranslate'>factory</code> is yes and success</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-factory/msg"></div>
+      <p class="ansible-option-title"><strong>msg</strong></p>
+      <a class="ansibleOptionLink" href="#return-factory/msg" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The command status message</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> "reverted the configuration to the factory configuration."</p>
+    </div></td>
+  </tr>
+
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-get"></div>
+      <p class="ansible-option-title"><strong>get</strong></p>
+      <a class="ansibleOptionLink" href="#return-get" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">list</span>
+        / <span class="ansible-option-elements">elements=dictionary</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>A list containing information about the row(s)</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class='docutils literal notranslate'>get</code> is yes and success</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-get/data"></div>
+      <p class="ansible-option-title"><strong>data</strong></p>
+      <a class="ansibleOptionLink" href="#return-get/data" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">dictionary</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>Column names/values</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {"number": "2", "server": "10.48.254.33"}</p>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-get/href"></div>
+      <p class="ansible-option-title"><strong>href</strong></p>
+      <a class="ansibleOptionLink" href="#return-get/href" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The REST API URL to the row</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> "http://192.168.1.1/api/v1/misc/dns_servers/1"</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-get/id"></div>
+      <p class="ansible-option-title"><strong>id</strong></p>
+      <a class="ansibleOptionLink" href="#return-get/id" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">integer</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The row id</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 1</p>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-get/table"></div>
+      <p class="ansible-option-title"><strong>table</strong></p>
+      <a class="ansibleOptionLink" href="#return-get/table" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The name of the table</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> "Testname"</p>
+    </div></td>
+  </tr>
+
+  <tr class="row-odd">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-modify"></div>
+      <p class="ansible-option-title"><strong>modify</strong></p>
+      <a class="ansibleOptionLink" href="#return-modify" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">list</span>
+        / <span class="ansible-option-elements">elements=dictionary</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>A list containing information about the modified row</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class='docutils literal notranslate'>modify</code> is yes and success</p>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-modify/data"></div>
+      <p class="ansible-option-title"><strong>data</strong></p>
+      <a class="ansibleOptionLink" href="#return-modify/data" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">dictionary</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>Column names/values</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {"number": "2", "server": "10.48.254.33"}</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-modify/href"></div>
+      <p class="ansible-option-title"><strong>href</strong></p>
+      <a class="ansibleOptionLink" href="#return-modify/href" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The REST API URL to the modified row</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> "http://192.168.1.1/api/v1/misc/dns_servers/1"</p>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-modify/id"></div>
+      <p class="ansible-option-title"><strong>id</strong></p>
+      <a class="ansibleOptionLink" href="#return-modify/id" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">integer</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The row id</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 10</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-modify/table"></div>
+      <p class="ansible-option-title"><strong>table</strong></p>
+      <a class="ansibleOptionLink" href="#return-modify/table" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The name of the table</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> "Testname"</p>
+    </div></td>
+  </tr>
+
+  <tr class="row-even">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-return_rowid"></div>
+      <p class="ansible-option-title"><strong>return_rowid</strong></p>
+      <a class="ansibleOptionLink" href="#return-return_rowid" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">list</span>
+        / <span class="ansible-option-elements">elements=string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>The matched row id(s).</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class='docutils literal notranslate'>return_rowid</code> is yes and success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> [1, 3]</p>
+    </div></td>
+  </tr>
+  <tr class="row-odd">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-revert"></div>
+      <p class="ansible-option-title"><strong>revert</strong></p>
+      <a class="ansibleOptionLink" href="#return-revert" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">dictionary</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>A command status message</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class='docutils literal notranslate'>revert</code> is yes and success</p>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-revert/msg"></div>
+      <p class="ansible-option-title"><strong>msg</strong></p>
+      <a class="ansibleOptionLink" href="#return-revert/msg" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The command status message</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> "reverted the configuration to the last applied configuration."</p>
+    </div></td>
+  </tr>
+
+  <tr class="row-odd">
+    <td><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-store"></div>
+      <p class="ansible-option-title"><strong>store</strong></p>
+      <a class="ansibleOptionLink" href="#return-store" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">dictionary</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-cell">
+      <p>A command status message</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class='docutils literal notranslate'>store</code> is yes and success</p>
+    </div></td>
+  </tr>
+  <tr class="row-even">
+    <td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+      <div class="ansibleOptionAnchor" id="return-store/msg"></div>
+      <p class="ansible-option-title"><strong>msg</strong></p>
+      <a class="ansibleOptionLink" href="#return-store/msg" title="Permalink to this return value"></a>
+      <p class="ansible-option-type-line">
+        <span class="ansible-option-type">string</span>
+      </p>
+    </div></td>
+    <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+      <p>The command status message</p>
+      <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+      <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> "Successfully applied and saved the configuration."</p>
+    </div></td>
+  </tr>
+
+  </tbody>
+  </table>
 
 
 
