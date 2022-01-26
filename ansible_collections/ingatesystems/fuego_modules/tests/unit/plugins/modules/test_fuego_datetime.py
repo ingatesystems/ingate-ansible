@@ -41,7 +41,7 @@ class TestDateTimeModule(TestIngateModule):
     def test_fuego_datetime_set(self):
         """Test setting date, time and timezone.
         """
-        command='set'
+        command = 'set'
         set_module_args(
             dict(
                 client=dict(
@@ -71,7 +71,7 @@ class TestDateTimeModule(TestIngateModule):
     def test_fuego_datetime_get(self):
         """Test getting date, time and timezone.
         """
-        command='get'
+        command = 'get'
         set_module_args(
             dict(
                 client=dict(
@@ -101,7 +101,7 @@ class TestDateTimeModule(TestIngateModule):
     def test_fuego_datetime_timezone_list(self):
         """Test listing timezones.
         """
-        command='timezone_list'
+        command = 'timezone_list'
         set_module_args(
             dict(
                 client=dict(

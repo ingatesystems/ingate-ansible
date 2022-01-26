@@ -26,4 +26,3 @@ rsync -cprv --delete-after temp-rst/ rst/
 mkdir -p html
 sphinx-build -M html rst build -c . -W --keep-going && \
     mv build/html/* html/
-

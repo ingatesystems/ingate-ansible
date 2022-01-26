@@ -41,7 +41,7 @@ class TestInformationModule(TestIngateModule):
     def test_fuego_information_unit(self):
         """Test retrieving unit information.
         """
-        command='unit'
+        command = 'unit'
         set_module_args(
             dict(
                 client=dict(
@@ -66,7 +66,7 @@ class TestInformationModule(TestIngateModule):
     def test_fuego_information_error(self):
         """Test retrieving error information.
         """
-        command='error'
+        command = 'error'
         set_module_args(
             dict(
                 client=dict(
@@ -91,7 +91,7 @@ class TestInformationModule(TestIngateModule):
     def test_fuego_information_table_describe(self):
         """Test retrieving table descriptions.
         """
-        command='table_describe'
+        command = 'table_describe'
         set_module_args(
             dict(
                 client=dict(
@@ -117,7 +117,7 @@ class TestInformationModule(TestIngateModule):
     def test_fuego_information_table_list(self):
         """Test listing tables.
         """
-        command='table_list'
+        command = 'table_list'
         set_module_args(
             dict(
                 client=dict(
