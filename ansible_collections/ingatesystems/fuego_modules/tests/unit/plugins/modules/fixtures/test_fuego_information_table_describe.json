@@ -1,0 +1,14 @@
+[
+    {
+        "table": {
+            "href": "http://10.48.28.78/api/v1/webgui/testua",
+            "info": {
+                "call_duration": "TestuaDurationLimit",
+                "call_preferred_pt": "RtpPayloadTypeSel",
+                "call_ptime": "RtpPacketizationTime",
+                "call_to": "OptSipUriWithScheme"
+            },
+            "name": "webgui.testua"
+        }
+    }
+]

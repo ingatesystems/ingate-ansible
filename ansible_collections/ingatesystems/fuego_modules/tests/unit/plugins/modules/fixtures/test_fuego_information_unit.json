@@ -1,0 +1,17 @@
+{
+    "installid": "4ac6959f41a164abf0a518c4a83d93835fd7b174",
+    "interfaces": "eth0 eth1 eth2 eth3 eth4 eth5",
+    "lang": "en",
+    "lic_email": "erik@ingate.com",
+    "lic_mac": "52:54:00:4c:e2:07",
+    "lic_name": "Erik Andersson",
+    "macaddr": "52:54:00:4c:e2:07",
+    "mode": "Firewall",
+    "modules": "failover vpn sip qturn qos rsc voipsm idsips siptrunk sipswitch",
+    "patches": [],
+    "product": "Software SIParator/Firewall",
+    "serial": "IG-200-150-5003-0",
+    "systemid": "IG-200-150-5003-0",
+    "unitname": "sip_basic",
+    "version": "6.3.3"
+}

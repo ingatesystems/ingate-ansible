@@ -1,0 +1,13 @@
+[
+    {
+        "error": {
+            "column": "server_dns",
+            "err_id": 1,
+            "msg": "No value given.",
+            "rowid": 5,
+            "table": "misc.dns_servers",
+            "type": "VALUE_MISSING"
+        },
+        "href": "http://10.48.28.78/api/v1/misc/dns_servers/5"
+    }
+]

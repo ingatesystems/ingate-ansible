@@ -1,0 +1,18 @@
+[
+    {
+        "table": {
+            "href": "http://10.48.28.78/api/v1/webgui/trunk_selection",
+            "methods": [
+                "GET",
+                "PUT"
+            ],
+            "name": "webgui.trunk_selection",
+            "sdk_methods": [
+                "modify_row",
+                "modify_single_row",
+                "dump_table",
+                "dump_row"
+            ]
+        }
+    }
+]
