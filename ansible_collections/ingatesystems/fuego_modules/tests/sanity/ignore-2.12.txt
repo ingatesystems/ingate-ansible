@@ -1,0 +1,5 @@
+docs/html/_static/underscore-1.13.1.js no-smart-quotes!skip
+docs/html/fuego_config_module.html no-smart-quotes!skip
+docs/html/fuego_datetime_module.html no-smart-quotes!skip
+docs/html/fuego_information_module.html no-smart-quotes!skip
+docs/html/fuego_system_module.html no-smart-quotes!skip
