@@ -23,5 +23,4 @@ install: build
 clean:
 	$(RM) ingatesystems-fuego_modules-$(VERSION).tar.gz
 
-
 all: clean check build install
