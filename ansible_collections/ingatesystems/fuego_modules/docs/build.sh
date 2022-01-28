@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 set -e
-cd /home/erik/git/ingate-ansible/ansible_collections/ingatesystems/fuego_modules/docs
 
 # Install requirements.
 pip3 install -r requirements.txt
 
 # Create collection documentation into temporary directory
-rm -rf temp-rst
+[ -d temp-rst ] && rm -rf temp-rst
 mkdir -p temp-rst
 chmod 700 temp-rst
+[ -d rst ] && rm -rf rst
 antsibull-docs collection \
     --use-current \
     --squash-hierarchy \
