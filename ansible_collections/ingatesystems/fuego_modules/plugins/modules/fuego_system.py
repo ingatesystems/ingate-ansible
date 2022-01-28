@@ -104,7 +104,7 @@ options:
 notes:
   - The methods C(patch) and C(upgrade_download) assumes that the the
     preliminary configuration has been stored to the permanent configuration at
-    least once (see module M(fuego_config) C(store) method).
+    least once (see module fuego_config C(store) method).
   - For the methods C(license) and C(upgrade_download) the Ansible host needs
     Internet connectivity.
   - When using the the C(upgrade) method the unit will reboot and you need
