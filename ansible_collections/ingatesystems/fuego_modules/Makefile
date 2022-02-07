@@ -15,15 +15,7 @@ install: build
 	ansible-galaxy collection install \
 		ingatesystems-fuego_modules-$(VERSION).tar.gz --force
 
-html: build install
-	[ -d docs/html ] && rm -rf docs/html
-	mkdir -p docs/html
-	(cd docs && ./build.sh)
-
 clean:
 	$(RM) ingatesystems-fuego_modules-$(VERSION).tar.gz
-	$(RM) -rf docs/build
-	$(RM) -rf docs/rst
-	$(RM) -rf docs/temp-rst
 
-all: clean check build install html
+all: clean check build install
