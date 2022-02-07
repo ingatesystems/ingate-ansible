@@ -15,6 +15,6 @@ tags:
   - firewall
 dependencies: {}
 repository: https://github.com/ingatesystems/ingate-ansible
-documentation: https://www.ingate.com
+documentation: https://ingatesystems.github.io/ingate-docs/ansible/fuego/html
 homepage: https://www.ingate.com
 issues: https://github.com/ingatesystems/ingate-ansible/issues
