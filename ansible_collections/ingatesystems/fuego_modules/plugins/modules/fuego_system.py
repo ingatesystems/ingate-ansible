@@ -11,9 +11,11 @@ __metaclass__ = type
 DOCUMENTATION = '''
 ---
 module: fuego_system
-short_description: Manage licenses, patches and upgrades on an Ingate SBC.
+short_description: Manage system near functionality such as licenses, patches
+                   and upgrades on an Ingate SBC.
 description:
-  - Manage licenses, patches and upgrades on an Ingate SBC.
+  - Manage system near functionality such as licenses, patches
+    and upgrades on an Ingate SBC.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - ingatesystems.fuego_modules.common_options
