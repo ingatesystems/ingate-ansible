@@ -102,6 +102,10 @@ EXAMPLES = '''
 - name: Add/remove DNS servers
   hosts: 192.168.1.1
   connection: local
+  collections:
+    - ingatesystems.fuego_modules
+  gather_facts: no
+
   vars:
     client_rw:
       version: v1
@@ -109,8 +113,8 @@ EXAMPLES = '''
       scheme: http
       username: alice
       password: foobar
-  tasks:
 
+  tasks:
   - name: Load factory defaults
     fuego_config:
       client: "{{ client_rw }}"
