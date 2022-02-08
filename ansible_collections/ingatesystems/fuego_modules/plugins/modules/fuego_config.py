@@ -92,6 +92,8 @@ notes:
   - If C(store_download) is set to True, and C(path) and C(filename) is
     omitted, the file will be stored in the current directory with an
     automatic filename.
+  - This module deprecates the Ingate network module B(ig_config) that was
+    present in Ansible < 2.10.
 author:
   - Ingate Systems AB (@ingatesystems)
 '''

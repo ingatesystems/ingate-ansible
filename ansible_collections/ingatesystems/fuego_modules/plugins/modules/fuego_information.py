@@ -34,6 +34,9 @@ options:
     description:
       - List all tables.
     type: bool
+notes:
+  - This module deprecates the Ingate network module B(ig_unit_information) that
+    was present in Ansible < 2.10.
 author:
   - Ingate Systems AB (@ingatesystems)
 '''
