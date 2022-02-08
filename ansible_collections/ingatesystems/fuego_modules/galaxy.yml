@@ -4,7 +4,7 @@ version: 1.0.0
 readme: README.md
 authors:
   - Erik Andersson <erik@ingate.com>
-description: Ingate Systems Modules for Ansible
+description: Ingate Systems Collection for Ansible
 license:
   - GPL-3.0-only
 tags:
@@ -13,8 +13,9 @@ tags:
   - sip
   - siparator
   - firewall
+  - sbc
 dependencies: {}
-repository: https://github.com/ingatesystems/ingate-ansible
+repository: https://github.com/ingatesystems/ingate-ansible/tree/master/ansible_collections/ingatesystems/fuego_modules
 documentation: https://ingatesystems.github.io/ingate-docs/ansible/fuego/html
 homepage: https://www.ingate.com
 issues: https://github.com/ingatesystems/ingate-ansible/issues
