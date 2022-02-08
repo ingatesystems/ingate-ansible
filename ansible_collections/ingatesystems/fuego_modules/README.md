@@ -47,24 +47,24 @@ Enter the following command in your shell to install the collection via Ansible 
       password: mypwd
 
   tasks:
-    - name: Revert to last known applied configuration
-      fuego_config:
-        client: "{{ client_rw }}"
-        revert: true
-      register: result
-    - debug:
-        var: result
+  - name: Revert to last known applied configuration
+    fuego_config:
+      client: "{{ client_rw }}"
+      revert: true
+    register: result
+  - debug:
+      var: result
 
-    - name: Change the unit name
-      fuego_config:
-        client: "{{ client_rw }}"
-        modify: true
-        table: misc.unitname
-        columns:
-          unitname: sip_basic
-      register: result
-    - debug:
-        var: result
+  - name: Change the unit name
+    fuego_config:
+      client: "{{ client_rw }}"
+      modify: true
+      table: misc.unitname
+      columns:
+        unitname: sip_basic
+    register: result
+  - debug:
+      var: result
 ```
 
 ### Using the fuego_datetime module
@@ -86,13 +86,13 @@ Enter the following command in your shell to install the collection via Ansible 
       password: mypwd
 
   tasks:
-    - name: Get date, time and timezone
-      fuego_datetime:
-        client: "{{ client_rw }}"
-        get: true
-      register: result
-    - debug:
-        var: result
+  - name: Get date, time and timezone
+    fuego_datetime:
+      client: "{{ client_rw }}"
+      get: true
+    register: result
+  - debug:
+      var: result
 ```
 
 ### Using the fuego_information module
@@ -114,13 +114,13 @@ Enter the following command in your shell to install the collection via Ansible 
       password: mypwd
 
   tasks:
-    - name: Retrieve information about the unit
-      fuego_information:
-        client: "{{ client_rw }}"
-        unit: true
-      register: result
-    - debug:
-        var: result
+  - name: Retrieve information about the unit
+    fuego_information:
+      client: "{{ client_rw }}"
+      unit: true
+    register: result
+  - debug:
+      var: result
 ```
 
 ### Using the fuego_system module
@@ -142,16 +142,16 @@ Enter the following command in your shell to install the collection via Ansible 
       password: mypwd
 
   tasks:
-    - name: Upgrade to the latest version available
-      fuego_system:
-        client: "{{ client_rw }}"
-        upgrade_download: true
-        username: myaccount
-        password: myaccountpwd
-        latest: true
-      register: result
-    - debug:
-        var: result
+  - name: Upgrade to the latest version available
+    fuego_system:
+      client: "{{ client_rw }}"
+      upgrade_download: true
+      username: myaccount
+      password: myaccountpwd
+      latest: true
+    register: result
+  - debug:
+      var: result
 ```
 
 ## Additional Resources
