@@ -163,7 +163,3 @@ Enter the following command in your shell to install the collection via Ansible 
 
 ## Copyright
 Copyright 2022 Ingate Systems AB.
-
-## License
-
-See [license](LICENSE).
