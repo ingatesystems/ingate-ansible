@@ -2,8 +2,9 @@
 
 ## Overview
 
-This Ansible Collection can be installed via [Ansible Galaxy](https://galaxy.ansible.com)
-and contains modules and plugins for managing an Ingate SIParator/Firewall.
+This Ansible Collection (ingatesystems.fuego_modules) can be installed via
+[Ansible Galaxy](https://galaxy.ansible.com) and contains modules and plugins
+for managing an Ingate SIParator/Firewall.
 
 ## Requirements
 
