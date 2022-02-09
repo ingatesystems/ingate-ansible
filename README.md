@@ -12,7 +12,7 @@ installed on the Ansible host. The SDK can be installed by running `pip install 
 
 ## Current Collections
 
-### Ingate SIParator/Firewall
+### Ingate SIParator/Firewall (ingatesystems.fuego_modules)
 * [Code](ansible_collections/ingatesystems/fuego_modules)
 * [Documentation](https://ingatesystems.github.io/ingate-docs/ansible/fuego/html)
 * [Ansible Galaxy](https://galaxy.ansible.com/ingatesystems/fuego_modules)
