@@ -1,6 +1,6 @@
 namespace: ingatesystems
 name: fuego_modules
-version: 1.0.0
+version: 1.0.1
 readme: README.md
 authors:
   - Erik Andersson <erik@ingate.com>
