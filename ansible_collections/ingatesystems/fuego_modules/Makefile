@@ -16,6 +16,6 @@ install: build
 		ingatesystems-fuego_modules-$(VERSION).tar.gz --force
 
 clean:
-	$(RM) ingatesystems-fuego_modules-$(VERSION).tar.gz
+	$(RM) ingatesystems-fuego_modules-*.tar.gz
 
 all: clean check build install
