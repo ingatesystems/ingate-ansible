@@ -107,6 +107,11 @@ options:
     description:
       - Restart the SIP module and remove all state, like registrations etc.
     type: bool
+  flush_logins:
+    version_added: '1.1.0'
+    description:
+      - Log out all logged in admin users.
+    type: bool
 
 notes:
   - The methods C(patch) and C(upgrade_download) assumes that the the
@@ -181,6 +186,11 @@ EXAMPLES = '''
 - fuego_system:
     client: "{{ stored_client_data }}"
     restart_sip: true
+
+# Log out all logged in admin users
+- fuego_system:
+    client: "{{ stored_client_data }}"
+    flush_logins: true
 '''
 
 RETURN = '''
@@ -285,6 +295,16 @@ restart_sip:
       returned: success
       type: str
       sample: Successfully restarted the SIP module.
+flush_logins:
+  description: A command status message
+  returned: when C(flush_logins) is yes and success
+  type: dict
+  contains:
+    msg:
+      description: The command status message
+      returned: success
+      type: str
+      sample: Successfully flushed all logins.
 '''
 
 from ansible.module_utils.basic import AnsibleModule
@@ -482,6 +502,17 @@ def make_request(module):
             return True, 'restart_sip', response
         else:
             exit_empty_response(module)
+    elif module.params.get('flush_logins'):
+        # Log out all logged in admin users.
+        response = api_client.flush_logins()
+        if response:
+            try:
+                response = response[0]['flush-logins']
+            except Exception:
+                exit_unknown_response(module, response)
+            return True, 'flush_logins', response
+        else:
+            exit_empty_response(module)
 
     return False, '', {}
 
@@ -508,15 +539,17 @@ def main():
         latest_major=dict(type='bool'),
         latest=dict(type='bool'),
         restart_sip=dict(type='bool'),
+        flush_logins=dict(type='bool'),
     )
 
     mutually_exclusive = [('license', 'patch', 'upgrade', 'upgrade_accept',
                            'upgrade_abort', 'upgrade_downgrade',
                            'upgrade_download', 'reboot', 'opmode',
-                           'restart_sip')]
+                           'restart_sip', 'flush_logins')]
     required_one_of = [['license', 'patch', 'upgrade', 'upgrade_accept',
                         'upgrade_abort', 'upgrade_downgrade',
-                        'upgrade_download', 'reboot', 'opmode', 'restart_sip']]
+                        'upgrade_download', 'reboot', 'opmode', 'restart_sip',
+                        'flush_logins']]
     required_if = [('license', True, ['username', 'password', 'liccode']),
                    ('patch', True, ['filename']),
                    ('upgrade', True, ['filename']),

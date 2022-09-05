@@ -298,3 +298,28 @@ class TestSystemModule(TestIngateModule):
         self.assertTrue(command in result)
         data = result[command].get('msg', '')
         self.assertTrue('Successfully restarted the SIP module.' in data)
+
+    def test_fuego_system_flush_logins(self):
+        """Test logging out all logged in admin users.
+        """
+        command = 'flush_logins'
+        set_module_args(
+            dict(
+                client=dict(
+                    version='v1',
+                    address='127.0.0.1',
+                    scheme='http',
+                    username='alice',
+                    password='foobar'
+                ),
+                flush_logins=True
+            )
+        )
+        fixture = '%s_%s.%s' % (os.path.basename(__file__).split('.')[0],
+                                command, 'json')
+        result = self.execute_module(changed=True, fixture=fixture,
+                                     command=command)
+        self.assertTrue(result['changed'])
+        self.assertTrue(command in result)
+        data = result[command].get('msg', '')
+        self.assertTrue('Successfully flushed all logins.' in data)
