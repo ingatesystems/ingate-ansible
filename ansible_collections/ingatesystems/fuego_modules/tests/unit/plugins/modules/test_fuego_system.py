@@ -241,9 +241,9 @@ class TestSystemModule(TestIngateModule):
         )
         fixture = '%s_%s.%s' % (os.path.basename(__file__).split('.')[0],
                                 command, 'json')
-        result = self.execute_module(changed=True, fixture=fixture,
+        result = self.execute_module(changed=False, fixture=fixture,
                                      command=command)
-        self.assertTrue(result['changed'])
+        self.assertFalse(result['changed'])
         self.assertTrue(command in result)
         data = result[command].get('msg', '')
         self.assertTrue('Rebooting the unit now...' in data)
