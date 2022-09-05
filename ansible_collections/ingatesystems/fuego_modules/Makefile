@@ -7,6 +7,9 @@ $(eval VERSION := $(shell grep version: $(GALAXY) | \
 build:
 	ansible-galaxy collection build --force
 
+unit:
+	ansible-test units --docker default -v
+
 check: build
 	ansible-test sanity --docker default -v
 	ansible-test units --docker default -v
