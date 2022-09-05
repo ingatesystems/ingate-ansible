@@ -139,3 +139,29 @@ class TestInformationModule(TestIngateModule):
         data = result[command][0].get('table', '')
         name = data.get('name', '')
         self.assertTrue(name == 'webgui.trunk_selection')
+
+    def test_fuego_information_sip_status(self):
+        """Test SIP status information and metrics.
+        """
+        command = 'sip_status'
+        set_module_args(
+            dict(
+                client=dict(
+                    version='v1',
+                    address='127.0.0.1',
+                    scheme='http',
+                    username='alice',
+                    password='foobar'
+                ),
+                sip_status=True,
+            )
+        )
+        fixture = '%s_%s.%s' % (os.path.basename(__file__).split('.')[0],
+                                command, 'json')
+        result = self.execute_module(changed=False, fixture=fixture,
+                                     command=command)
+        self.assertFalse(result['changed'])
+        self.assertTrue(command in result)
+        data = result[command].get('license_statistics')
+        license_type = data[0].get('license', '')
+        self.assertTrue(license_type == 'Concurrent Calls SIP Trunk Sessions')

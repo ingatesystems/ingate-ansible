@@ -34,6 +34,11 @@ options:
     description:
       - List all tables.
     type: bool
+  sip_status:
+    version_added: '1.1.0'
+    description:
+      - Return SIP status information and metrics.
+    type: bool
 notes:
   - This module deprecates the Ingate network module B(ig_unit_information) that
     was present in Ansible < 2.10.
@@ -61,6 +66,11 @@ EXAMPLES = '''
 - fuego_information:
     client: "{{ stored_client_data }}"
     table_list: true
+
+# Return SIP status information and metrics
+- fuego_information:
+    client: "{{ stored_client_data }}"
+    sip_status: true
 '''
 
 RETURN = '''
@@ -249,6 +259,189 @@ table_list:
           type: list
           elements: str
           sample: GET
+sip_status:
+  description: SIP status information and metrics
+  returned: when C(sip_status) is yes and success
+  type: dict
+  contains:
+    active_sessions:
+      description: A list of active SIP sessions
+      returned: success
+      type: list
+      elements: dict
+      contains:
+        call_id:
+          description: The SIP Call-ID
+          returned: success
+          type: str
+          sample: qrvmhopdqmmfyjt@foouser
+        callee:
+          description: The SIP callee
+          returned: success
+          type: str
+          sample: '&lt;sip:foo@example.com&gt;'
+        caller:
+          description: The SIP caller
+          returned: success
+          type: str
+          sample: '&lt;sip:alice@192.168.20.45&gt;'
+        start:
+          description: The time when the SIP session was established
+          returned: success
+          type: str
+          sample: '10:50:51'
+        state:
+          description: The state of the SIP session
+          returned: success
+          type: str
+          sample: Established
+    count_active_sessions:
+      description: The amount of active SIP sessions
+      returned: success
+      type: int
+      sample: 0
+    count_max_registered_users:
+      description: The amount of maximum registered SIP users
+      returned: success
+      type: int
+      sample: 0
+    count_max_sessions:
+      description: The amount of maximum active SIP sessions
+      returned: success
+      type: int
+      sample: 0
+    count_registered_users:
+      description: The amount of registered SIP users
+      returned: success
+      type: int
+      sample: 0
+    idsips_blacklist:
+      description: A list of blacklisted peers
+      returned: success
+      type: list
+      elements: dict
+      sample: []
+    idsips_packet_filtering:
+      description: A list of blacklisted peers
+      returned: success
+      type: list
+      elements: dict
+      contains:
+        hits:
+          description: The amount of hits for a rule
+          returned: success
+          type: int
+          sample: 0
+        name:
+          description: The name of a rule
+          returned: success
+          type: str
+          sample: Scanners
+        number:
+          description: The rule number
+          returned: success
+          type: int
+          sample: 1
+    idsips_rate_limiting:
+      description: A list of blacklisted peers
+      returned: success
+      type: list
+      elements: dict
+      contains:
+        hits:
+          description: The amount of hits for a rule
+          returned: success
+          type: int
+          sample: 0
+        name:
+          description: The name of a rule
+          returned: success
+          type: str
+          sample: Default auto
+    license_statistics:
+      description: A list of different license statistics
+      returned: success
+      type: list
+      elements: dict
+      contains:
+        current_use:
+          description: The amount of used licenses
+          returned: success
+          type: int
+          sample: 0
+        license:
+          description: The type of license
+          returned: success
+          type: str
+          sample: SIP Registrar Users
+        max_used:
+          description: The amount of maximum used licenses
+          returned: success
+          type: int
+          sample: 0
+    message_statistics:
+      description: A list of different message statistics
+      returned: success
+      type: list
+      elements: dict
+      contains:
+        message:
+          description: The type of message
+          returned: success
+          type: str
+          sample: INVITE
+        rx:
+          description: The amount of received messages
+          returned: success
+          type: int
+          sample: 0
+        tx:
+          description: The amount of transmitted messages
+          returned: success
+          type: int
+          sample: 0
+    monitored_servers:
+      description: A list of monitored SIP servers
+      returned: success
+      type: list
+      elements: dict
+      contains:
+        port:
+          description: The port used for monitoring
+          returned: success
+          type: int
+          sample: 5060
+        server:
+          description: The server that is monitored
+          returned: success
+          type: str
+          sample: 192.168.28.28
+        status:
+          description: The current monitoring status
+          returned: success
+          type: str
+          sample: Online
+        transport:
+          description: The used transport protocol
+          returned: success
+          type: str
+          sample: UDP
+    registered_users:
+      description: A list of registered SIP users
+      returned: success
+      type: list
+      elements: dict
+      contains:
+        registered_from:
+          description: The IP address for which the user is registered from
+          returned: success
+          type: str
+          sample: 192.168.56.3
+        user:
+          description: The registered user
+          returned: success
+          type: str
+          sample: foouser@example.com
 '''
 
 from ansible.module_utils.basic import AnsibleModule
@@ -297,6 +490,15 @@ def make_request(module):
             return False, 'table_list', response
         else:
             exit_empty_response(module)
+    elif module.params.get('sip_status'):
+        # Return SIP status information and metrics.
+        response = api_client.sip_status()
+        if response:
+            try:
+                response = response[0]['sip-status']
+            except Exception:
+                exit_unknown_response(module, response)
+            return False, 'sip_status', response
 
     return False, '', {}
 
@@ -307,9 +509,11 @@ def main():
         error=dict(type='bool'),
         table_describe=dict(type='bool'),
         table_list=dict(type='bool'),
+        sip_status=dict(type='bool'),
     )
 
-    mutually_exclusive = [('unit', 'error', 'table_describe', 'table_list')]
+    mutually_exclusive = [('unit', 'error', 'table_describe', 'table_list',
+                           'sip_status')]
     module = AnsibleModule(argument_spec=argument_spec,
                            mutually_exclusive=mutually_exclusive,
                            supports_check_mode=False)

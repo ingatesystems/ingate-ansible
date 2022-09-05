@@ -1,0 +1,176 @@
+{
+    "active_sessions": [
+        {
+            "call_id": "qrvmhopdqmmfyjt@erikande",
+            "callee": "&lt;sip:erik@ingate.com&gt;",
+            "caller": "&lt;sip:erik@10.48.28.79&gt;",
+            "start": "10:50:51",
+            "state": "Established"
+        }
+    ],
+    "count_active_sessions": "0",
+    "count_max_registered_users": "0",
+    "count_max_sessions": "0",
+    "count_registered_users": "0",
+    "idsips_blacklist": [],
+    "idsips_packet_filtering": [
+        {
+            "hits": "0",
+            "name": "Scanners",
+            "number": "1"
+        }
+    ],
+    "idsips_rate_limiting": [
+        {
+            "hits": "0",
+            "name": "Default auto"
+        },
+        {
+            "hits": "0",
+            "name": "Default not auto"
+        }
+    ],
+    "license_statistics": [
+        {
+            "current_use": "0",
+            "license": "Concurrent Calls SIP Trunk Sessions",
+            "max_used": "0"
+        },
+        {
+            "current_use": "0",
+            "license": "Remote User SIP Sessions",
+            "max_used": "0"
+        },
+        {
+            "current_use": "0",
+            "license": "SIP Registrar Users",
+            "max_used": "0"
+        },
+        {
+            "current_use": "0",
+            "license": "Advanced Client Licenses",
+            "max_used": "0"
+        }
+    ],
+    "message_statistics": [
+        {
+            "message": "ACK",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "BYE",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "CANCEL",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "INVITE",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "OPTIONS",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "REGISTER",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "PRACK",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "SUBSCRIBE",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "NOTIFY",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "MESSAGE",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "INFO",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "REFER",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "UPDATE",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "PUBLISH",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "UNKNOWN",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "1XX",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "2XX",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "3XX",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "4XX",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "5XX",
+            "rx": "0",
+            "tx": "0"
+        },
+        {
+            "message": "6XX",
+            "rx": "0",
+            "tx": "0"
+        }
+    ],
+    "monitored_servers": [
+        {
+            "port": "",
+            "server": "10.48.255.1",
+            "status": "Online",
+            "transport": "UDP"
+        }
+    ],
+    "registered_users": [
+        {
+            "registered_from": "10.48.249.4",
+            "user": "erik@10.48.28.79"
+        }
+    ]
+}
