@@ -134,10 +134,8 @@ class TestInformationModule(TestIngateModule):
                                 command, 'json')
         result = self.execute_module(changed=False, fixture=fixture,
                                      command=command)
-        print(result)
         self.assertFalse(result['changed'])
         self.assertTrue(command in result)
         data = result[command][0].get('table', '')
-        print(data)
         name = data.get('name', '')
         self.assertTrue(name == 'webgui.trunk_selection')
