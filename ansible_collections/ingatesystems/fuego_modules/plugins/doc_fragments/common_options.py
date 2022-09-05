@@ -61,5 +61,5 @@ notes:
     host. To install the SDK use the pip command from your shell
     C(pip install ingatesdk).
 requirements:
-  - ingatesdk >= 1.0.6
+  - ingatesdk >= 1.0.14
 '''
