@@ -102,6 +102,11 @@ options:
     description:
       - Upgrade to the latest available version.
     type: bool
+  restart_sip:
+    version_added: '1.1.0'
+    description:
+      - Restart the SIP module and remove all state, like registrations etc.
+    type: bool
 
 notes:
   - The methods C(patch) and C(upgrade_download) assumes that the the
@@ -171,6 +176,11 @@ EXAMPLES = '''
 - fuego_system:
     client: "{{ stored_client_data }}"
     reboot: true
+
+# Restart the SIP module
+- fuego_system:
+    client: "{{ stored_client_data }}"
+    restart_sip: true
 '''
 
 RETURN = '''
@@ -265,6 +275,16 @@ opmode:
       returned: success
       type: str
       sample: Operational mode set to siparator.
+restart_sip:
+  description: A command status message
+  returned: when C(restart_sip) is yes and success
+  type: dict
+  contains:
+    msg:
+      description: The command status message
+      returned: success
+      type: str
+      sample: Successfully restarted the SIP module.
 '''
 
 from ansible.module_utils.basic import AnsibleModule
@@ -451,6 +471,17 @@ def make_request(module):
             return changed, 'upgrade_download', response
         else:
             exit_empty_response(module)
+    elif module.params.get('restart_sip'):
+        # Restart the SIP module.
+        response = api_client.restart_sip()
+        if response:
+            try:
+                response = response[0]['restart-sip']
+            except Exception:
+                exit_unknown_response(module, response)
+            return True, 'restart_sip', response
+        else:
+            exit_empty_response(module)
 
     return False, '', {}
 
@@ -476,14 +507,16 @@ def main():
         latest_minor=dict(type='bool'),
         latest_major=dict(type='bool'),
         latest=dict(type='bool'),
+        restart_sip=dict(type='bool'),
     )
 
     mutually_exclusive = [('license', 'patch', 'upgrade', 'upgrade_accept',
                            'upgrade_abort', 'upgrade_downgrade',
-                           'upgrade_download', 'reboot', 'opmode')]
+                           'upgrade_download', 'reboot', 'opmode',
+                           'restart_sip')]
     required_one_of = [['license', 'patch', 'upgrade', 'upgrade_accept',
                         'upgrade_abort', 'upgrade_downgrade',
-                        'upgrade_download', 'reboot', 'opmode']]
+                        'upgrade_download', 'reboot', 'opmode', 'restart_sip']]
     required_if = [('license', True, ['username', 'password', 'liccode']),
                    ('patch', True, ['filename']),
                    ('upgrade', True, ['filename']),
